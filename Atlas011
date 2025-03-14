@@ -16,8 +16,6 @@ getgenv().atlas = {
         },
         ['AimPart'] = 'HumanoidRootPart',
         ['View'] = false,
-        ['Notify'] = false,
-        ['ForceHit'] = false,
 		['EnableDrawings'] = {
 			['Tracer'] = {
                 ['Enabled'] = false,
