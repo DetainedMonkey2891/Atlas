@@ -1,319 +1,291 @@
--- @crasha011
-
-getgenv().Atlas = {
-    ['Script'] = {
-        ['UI'] = {
-            ['Enabled'] = true,
-            ['UI Type'] = 'Linoria' -- 'Linoria = PC' mobile one soon
-        },
-        ['Auto Set'] = {
-            ['Enabled'] = true,-- this must be enabled to use them
-            ['Get Up'] = true,
-            ['Seats'] = false,
-        },
-    },
-    ['Binds'] = {
-        ['Aimbot'] = '',
-        ['Target Aimbot'] = 'c',
-        ['Mouse Assist'] = '',
-        ['Target Resolver'] = 'v',
-        ['Camlock Resolver'] = '',
-    },
-    ['Aimbot'] = {
-        ['Enabled'] = false,
-        ['Prediction'] = 0.1672718,
-        ['Old Prediction'] = 0.1672718, 
-        ['Smoothing'] = 0.4,
-        ['Resolver'] = {
-            ['Enabled'] = false,
-            ['Refresh Rate'] = 24, 
-            ['Notify'] = true,
-        },
-        ['AimPart'] = 'HumanoidRootPart',
-        ['NewPart'] = 'HumanoidRootPart', -- returns back to the new aimpart
-        ['AimPart Type'] = 'Normal', -- 'Normal', 'Closest Part'
-        ['Notify'] = false,
-        ['Use Airshot'] = {
-            ['Enabled'] = false,
-            ['AirPart'] = 'LowerTorso',
-        },
-        ['Use Jump Offset'] = {
-            ['Enabled'] = true,
-            ['Value'] = 1.26,
-        },
-        ['Shake'] = {
-            ['Enabled'] = false,
-            ['X'] = 4,
-            ['Y'] = 2,
-            ['Z'] = 2,
-        },
-        ['Target Strafe'] = {
-            ['Enabled'] = false,
-            ['Auto Shoot On Strafe'] = true,
-            ['Distance'] = 15,
-            ['Speed'] = 10,
-            ['Height'] = 3,
-            ['Mode'] = 'Strafe',
-        },
-    },
-    ['Mouse Assist'] = {
-        ['Enabled'] = true,
-        ['Prediction'] = 10.52,
-        ['Old Prediction'] = 10.52,
-        ['Smoothing'] = 5,
-        ['AimPart'] = 'Head',
-        ['Resolver'] = {
-            ['Enabled'] = false,
-            ['Refresh Rate'] = 24,
-            ['Notify'] = true,
-        },
-    },
+getgenv().atlas = { 
     ['Target Aimbot'] = {
-        ['Enabled'] = true,
-        ['Mode'] = 'Toggle', -- Toggle or Hold
-        ['Prediction'] = 0.4,
-        ['Old Prediction'] = 0.142291,
+        ['Enabled'] = false,
+        ['Method'] = "Velocity",
+        ['Use Camera'] = {
+            ['Enabled'] = false,
+            ['Smoothness'] = 0.7,
+        },
+        ['Keybind'] = "",
+        ['Prediction'] = {
+            ['Amount'] = 0.167791,
+            ['Auto Prediction'] = {
+                ['Enabled'] = false,
+                ['Mode'] = "Default",
+            },
+        },
         ['AimPart'] = 'HumanoidRootPart',
         ['View'] = false,
-        ['Notify'] = true,
-        ['Look At'] = false,
-        ['AntiGroundShoot'] = {
-            ['Enabled'] = true,
-            ['Math'] = 2.1 -- out of 5
+        ['Notify'] = false,
+        ['ForceHit'] = false,
+		['EnableDrawings'] = {
+			['Tracer'] = {
+                ['Enabled'] = false,
+                ['Visible'] = false,
+                ['Color'] = Color3.fromRGB(84, 101, 255),
+                ['Position'] = "Mouse",
+            },
+			['Dot'] = {
+                ['Enabled'] = false,
+                ['Color'] = Color3.fromRGB(84, 101, 255),
+            },
+            ['FOV'] = {
+                ['Enabled'] = false,
+                ['Radius'] = 120,
+                ['Color'] = Color3.fromRGB(84, 101, 255),
+            },
+            ['UI'] = {
+                ['Enabled'] = false,
+                ['Color'] = {
+                    ['Outline'] = Color3.fromRGB(84, 101, 255),
+                },
+            },
+		},
+        ['Checks'] = {
+            ['KO'] = {
+                ['Enabled'] = false,
+                ['Notify'] = false,
+                ['Method'] = "On Health",
+            },
+            ['Grabbed'] = false,
+            ['Visible'] = false,
         },
-        ['Resolver'] = {
+        ['Auto Select'] = {
             ['Enabled'] = false,
-            ['RefreshRate'] = 11,
-            ['Move Direction Delay'] = 24, 
-            ['Notify'] = true,
-        },
-        ['Dot'] = {
-            ['Enabled'] = true,
-            ['Color'] = Color3.fromRGB(255,255,255),
-            ['Size'] = 5,
+            ['Delay'] = 0.1,
         },
         ['Highlight'] = {
             ['Enabled'] = false,
-            ['Fill Color'] = Color3.fromRGB(255,0,41),
-            ['Outline Color'] = Color3.fromRGB(255,255,255),
+            ['Fill'] = Color3.fromRGB(84, 101, 255),
+            ['Outline'] = Color3.fromRGB(255, 255, 255),
         },
-        ['Part'] = {
-            ['Enabled'] = true,
-            ['Material'] = 'ForceField',
-            ['Color'] = Color3.fromRGB(255,255,255),
-            ['Size'] = 10,
-            ['Part Type'] = 'Fake Hitbox',
-            ['Transparency'] = 0.4,
-        },
-        ['Use Airshot'] = {
+        ['Resolver'] = {
             ['Enabled'] = false,
-            ['AirPart'] = 'LowerTorso',
-        },
-        ['Target UI'] = {
-            ['Enabled'] = true,
-            ['Position'] = 'Default', -- 'Default', 'Follow Target', 'Cursor'
-            ['Color'] = Color3.fromRGB(0, 208, 255),
-            ['Offset'] = {
-                ['Enabled'] = false,
-                ['X'] = 1,
-                ['Y'] = 2,
-            },
+            ['Keybind'] = "",
+            ['Notify'] = false
         },
         ['Target Strafe'] = {
             ['Enabled'] = false,
-            ['Auto Shoot On Strafe'] = true,
+			['Mode'] = "Normal",
+			['Sky Distance'] = 15.2,
             ['Distance'] = 15,
             ['Speed'] = 10,
-            ['Height'] = 3,
-            ['Mode'] = 'Strafe',
-            ['C-Sync'] = { -- doesnt work properly on solara 
-                ['Enabled'] = false,
-                ['Keybind'] = '',
-                ['Type'] = 'Random (On Target)', -- 'Random (On Target)' or 'Random' or 'Under Ground (On Target)'
-                ['Visualize Dummy'] = false,
-                ['Random Distance'] = 10, -- both 'Random' and 'Random (On Target)'
-                ['Underground Height'] = -5,
-                ['Auto Shoot On C-Sync'] = false,
-                ['Notify'] = false,
-            },
-        },
-    },
-    ['Global'] = {
-        ['Enabled'] = false, -- enable this first
-        ['Auto Prediction'] = false,
-        ['Mode'] = 'Normal', -- Normal, High
-        ['Math'] = 5,
-    },
-    ['Checks'] = {
-        ['Visible Check'] = false, 
-        ['KO Check'] = false, 
-        ['Crew Check'] = false, 
-        ['Friend Check'] = false, 
-    },
-    ['Animations'] = {
-        ['Enabled'] = false,
-        ['Greet'] = {
-            ['Enabled'] = false,
-            ['Keybind'] = '',
-        },
-        ['Lay'] = {
-            ['Enabled'] = false,
-            ['Keybind'] = '',
-        },
-        ['Lean'] = {
-            ['Enabled'] = false,
-            ['Keybind'] = '',
-        },
-        ['Praying'] = {
-            ['Enabled'] = false,
-            ['Keybind'] = '',
-        },
-    },
-    ['Gun Sorting'] = {
-        ['Enabled'] = false,
-        ['Keybind'] = 'b', 
-        ['Delete Extra'] = true, 
-        ['Slots'] = { 
-            '[Double-Barrel SG]',
-            '[Revolver]',
-            '[TacticalShotgun]',
-            '[Knife]',
-        }
-    },
-    ['World'] = {
-        ['Textures'] = { -- turning on ingame low gfx will remove the material and only leave the color
-            ['Enabled'] = false,
-            ['Material'] = 'Brick',
-            ['Color'] = Color3.fromRGB(0, 208, 255),
-            ['Keybind'] = 'g',
+            ['Height'] = 0,
+            ['RandomizeAmount'] = 10
         },
     },
     ['Misc'] = {
-        ['Fly'] = {
+        ['Crosshair'] = {
             ['Enabled'] = false,
-            ['Speed'] = 600,
-            ['Keybind'] = '',
+            ['Color'] = Color3.fromRGB(84, 101, 255),
+            ['Size'] = 20,
+            ['Gap'] = 2,
+            ['Position'] = "Middle",
+            ['Attach'] = false,
+            ['Rotation'] = {
+                ['Enabled'] = false,
+                ['Speed'] = 150,
+                ['Style'] = "Linear"
+            },
+            ['Circle'] = {
+                ['Enabled'] = false,
+                ['Color'] = Color3.fromRGB(84, 101, 255),
+                ['Pulse'] = false,
+                ['PulseSpeed'] = 3,
+                ['Resize'] = {
+                    ['Enabled'] = false,
+                    ['Min'] = 10,
+                    ['Max'] = 20,
+                },
+            },
+            ['Resize'] = {
+                ['Enabled'] = false,
+                ['Speed'] = 150,
+                ['Min'] = 10,
+                ['Max'] = 20
+            },
+            ['Text'] = {
+                ['Enabled'] = false,
+                ['Pulse'] = false,
+                ['PulseSpeed'] = 3,
+                ['Offset'] = 3.5
+            },
+            ['Gun'] = {
+                ['Enabled'] = false,
+                ['Offset'] = 2,
+            }
+        },
+        ['ThirdPerson'] = {
+            ['Enabled'] = false,
+            ['X'] = 7,
+            ['Y'] = 2,
+            ['Z'] = 4,
+        },
+        ['Force Equip'] = {
+            ['Enabled'] = false,
+            ['Delay'] = 0.10,
+            ['Tool'] = "[LMG]",
         },
         ['Movement Speed'] = {
             ['Enabled'] = false,
-            ['Speed'] = 3, 
-            ['Keybind'] = '',
-            ['Type'] = 'CFrame',
+            ['UseSpeed'] = false,
+            ['UseFly'] = false,
+            ['CFrameSpeed'] = 1.3,
+            ['FlySpeed'] = 100,
         },
         ['Anti Lock'] = {
+            ['Velocity Spoofer'] = {
+                ['Enabled'] = false,
+                ['Notify'] = false,
+                ['Unhittable'] = false,
+                ['Multiplier'] = false,
+                ['Mouse Control'] = false,
+                ['ShowVisualizer'] = false,
+                ['PredictionBreaker'] = {
+                    ['Enabled'] = false,
+                    ['UsePreset'] = false,
+                    ['Method'] = "Random",
+                    ['Velocity'] = {
+                        ['X'] = 0,
+                        ['Y'] = 0,
+                        ['Z'] = 0
+                    },
+                },
+                ['CripWalk'] = {
+                    ['Enabled'] = false,
+                    ['Tick'] = 1,
+                },
+            },
+            ['C-Sync'] = { 
+                ['Enabled'] = false,
+                ['Type'] = 'Random', 
+                ['Visualize'] = {
+                    ['Enabled'] = false,
+                    ['DummyColor'] = Color3.fromRGB(84, 101, 255),
+                },
+                ['Random Power'] = 23.5, 
+                ['Underground Height'] = 5,
+                ['Strafe Speed'] = 5,
+                ['Strafe Distance'] = 10,
+                ['Strafe Height'] = 0,
+                ['Around Distance'] = 20,
+                ['Notify'] = false,
+                ['AutoShoot'] = false,
+                ['Attach'] = false,
+            },
+        },
+        ['Auto Reload'] = false,
+        ['Anti Slow'] = false,
+        ['No Jumpcool Down'] = false,
+        ['No Recoil'] = false,
+        ['AutoBuy'] = {
             ['Enabled'] = false,
-            ['Notify'] = true,
-            ['Keybind'] = '',
-            ['Sky'] = false,
-            ['Underground'] = false,
-            ['Break Velocity'] = false,
-            ['Random'] = false,
-            ['RandomV2'] = false,
-            ['Velocity Multiplier'] = {
+            ['Auto Buy On Respawn'] = false,
+            ['ReturnBackDelay'] = 0.1,
+            ['Gun'] = 'LMG',
+            ['Foods'] = 'Chicken',
+            ['Misc'] = 'Surgeon Mask',
+            ['Armor'] = 'Medium Armor',
+            ['AmmoAmount'] = 3,
+            ['AutoArmor'] = {
                 ['Enabled'] = false,
-                ['Amount'] = 100,
+                ['BuyOn'] = 85
             },
-            ['Offset'] = {
+        },
+        ['Extras'] = {
+            ["Aspect Ratio"] = {
                 ['Enabled'] = false,
-                ['X'] = 10,
-                ['Y'] = 96,
-                ['Z'] = 14,
+                ['X'] = 100,
+                ['Y'] = 50,
             },
-            ['Desync'] = {
-                ['Enabled'] = false, -- solara supported
-                ['Amount'] = 2,-- solara supported
-                ['Network Desync'] = { -- not solara supported
-                    ['Enabled'] = false,-- not solara supported
-                    ['Amount'] = 10,-- not solara supported
+            ['World'] = {
+                ['Enable'] = true,
+                ['Clock'] = {
+                    ['Enabled'] = false,
+                    ['Time'] = 1,
+                },
+                ['Technology'] = {
+                    ['Enabled'] = false,
+                    ['Type'] = "Future",
+                },
+                ['Ambience'] = {
+                    ['Enable'] = true,
+                    ['Color'] = {
+                        ['Indoor'] = Color3.fromRGB(0, 0, 100),
+                        ['Outside'] = Color3.fromRGB(0, 0, 255),
+                    },
+                },
+                ['Brightness'] = {
+                    ['Enable'] = false,
+                    ['Amount'] = 1,
+                },
+                ['Sky Box'] = {
+                    ['Enabled'] = false,
+                    ['Type'] = "Nebula",
+                },
+                ['Fog'] = {
+                    ['Enable'] = false,
+                    ['Color'] = Color3.fromRGB(0, 0, 255),
+                    ['Start'] = 0,
+                    ['End'] = 200,
+                },
+                ['Self Chams'] = {
+                    ['UseChams'] = false,
+                    ['Enable'] = false,
+                    ['Color'] = Color3.fromRGB(1, 1, 1),
+                    ['Material'] = 'ForceField',
+                    ['Remove Clothes'] = false,
+                },
+                ['Self Trail'] = {
+                    ['Enabled'] = false,
+                    ['Color'] = Color3.fromRGB(1, 1, 1),
+                    ['Duration'] = 0.5,
+                    ['Width'] = 1.6,
+                },
+            },
+            ['DisableShootSounds'] = false,
+            ['Gun'] = {
+                ['Enabled'] = false,
+                ['Gun Chams'] = {
+                    ['UseChams'] = false,
+                    ['Enabled'] = false,
+                    ['Color'] = Color3.fromRGB(102, 60, 153),
+                    ['Material'] = "Neon",
+                },
+                ['Bullet Tracers'] = {
+                    ['Enabled'] = false,
+                    ['Color'] = Color3.fromRGB(102, 60, 153),
+                    ['Duration'] = 0.6,
+                    ['Thickness'] = 3,
+                    ['Type'] = "Starhook",
+                    ['Fade'] = {
+                        ['Enabled'] = false,
+                        ['Duration'] = 0.7,
+                    },
+                },
+                ['Hit Detection'] = {
+                    ['Enabled'] = false,
+                    ['Log Detection'] = false,
+                    ['Sound Detection'] = {
+                        ['Enabled'] = false,
+                        ['Volume'] = 1,
+                        ['Distortion'] = 0.1,
+                        ['Sounds'] = "OOF",
+                    },
+                    ['Hit Effect'] = {
+                        ['Enabled'] = false,
+                        ['Type'] = "Bubble",
+                        ['Color'] = Color3.fromRGB(102, 60, 153),
+                        ['Duration'] = 1,
+                    },  
                 },
             },
         },
-        ['Auto Reload'] = true,
-        ['Auto Stomp'] = true,
-        ['Anti Slow'] = true,
-        ['No Jumpcool Down'] = true,
-        ['ESP'] = {
-            ['Enabled'] = false, 
-            ['Names'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(255, 255, 255),
-            }, 
-            ['Box'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(255, 255, 255)
-            }, 
-            ['HealthBar'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(0, 255, 0)
-            }, 
-            ['HealthText'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(0, 255, 0)
-            }, 
-            ['ArmorBar'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(0, 189, 255)
-            }, 
-            ['ArmorText'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(0, 189, 255)
-            },
-            ['Distance'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(255, 255, 255)
-            },
-            ['Tool'] = {
-                ['Enabled'] = false, 
-                ['Color'] = Color3.fromRGB(255, 255, 255)
-            }, 
-            ['Tracer'] = {
-                ['Enabled'] = false,
-                ['Method'] = 'Screen',
-                ['Thickness'] = 1,
-                ['Color'] = Color3.fromRGB(255, 255, 255)
-            },
-        },
-        ['Cone Hat'] = {
-            ['Enabled'] = false,
-            ['Hat Visibility'] = .35,
-            ['Circle Visibility'] = 1,
-            ['Height'] = .75,
-            ['Radius'] = 1,
-            ['Sides'] = 25,
-            ['Rainbow'] = false,
-            ['Color'] = Color3.fromRGB(255, 255, 255),
-            ['Offset'] = Vector3.new(0, .75, 0),
-        },
     },
-    ['Crosshair'] = {
+    ['Animations'] = {
         ['Enabled'] = false,
-        ['Outline'] = false,
-        ['Text'] = true,
-        ['TextSize'] = 35,
-        ['TextOutline'] = true,
-        ['Color'] = Color3.fromRGB(111,13,255),
-        ['Rainbow'] = true,
-        ['Position'] = 'Mouse', -- Mouse and Middle
-        ['Width'] = 1,
-        ['Length'] = 1,
-        ['Radius'] = 20,
-        ['Spinning'] = {
-            ['Enabled'] = false,
-            ['Speed'] = 100,
-            ['EastingStyle'] = 'Circular',
-            ['EastingDirection'] = 'InOut',
-        },
-        ['Resize'] = {
-            ['Enabled'] = true,
-            ['Speed'] = 100,
-        },
-    },
-    ['Macro'] = {
-        ['Enabled'] = false,
-        ['Keybind'] = 'q',
-        ['Mode'] = 'Toggle',
-        ['Macro Type'] = 'IO',
-        ['Delay'] = 0.01,
+        ['Animation'] = "Floss",
+        ['Speed'] = 1,
     },
 }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/DetainedMonkey2891/Atlas/refs/heads/main/Atlas"))()
